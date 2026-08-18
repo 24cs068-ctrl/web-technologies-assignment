@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding the World Wide Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page header: introduces the topic to the reader -->
+  <header class="page-header">
+    <h1>Understanding the World Wide Web</h1>
+    <p class="subtitle">A quick reference built for a new institution's website team</p>
+  </header>
+
+  <!-- Simple in-page navigation, one link per concept section -->
+  <nav class="toc">
+    <a href="#internet">Internet</a>
+    <a href="#network">Networks</a>
+    <a href="#url">URL</a>
+    <a href="#domain">Domain</a>
+    <a href="#browser-server">Browser &amp; Server</a>
+    <a href="#working">How a Website Works</a>
+    <a href="#client-server-script">Client vs Server Scripting</a>
+  </nav>
+
+  <main>
+
+    <!-- 1. Internet Overview -->
+    <section id="internet" class="topic">
+      <h2>1. Internet Overview</h2>
+      <p>The <strong>Internet</strong> is a global network of networks — millions of computers,
+      servers and devices connected together using a common set of rules (protocols) so they can
+      exchange data. It doesn't belong to one company or country; it's a cooperative system that
+      routes information from a source to a destination, usually in a fraction of a second.</p>
+      <p>The <strong>World Wide Web (WWW)</strong> is not the same thing as the Internet. The
+      Internet is the physical and logical network; the Web is one <em>service</em> that runs on
+      top of it — a collection of linked documents (webpages) accessed using HTTP/HTTPS. Email,
+      file transfer (FTP) and video calls are other services that also use the Internet.</p>
+
+      <div class="diagram">
+        <p class="diagram-label">Internet vs. Web</p>
+        <div class="diagram-row">
+          <div class="box box-wide">Internet <span class="box-sub">(the network — cables, routers, ISPs)</span></div>
+        </div>
+        <div class="diagram-row three-up">
+          <div class="box">WWW <span class="box-sub">webpages</span></div>
+          <div class="box">Email <span class="box-sub">SMTP</span></div>
+          <div class="box">File Transfer <span class="box-sub">FTP</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Fundamental Computer Network Concepts -->
+    <section id="network" class="topic">
+      <h2>2. Fundamental Computer Network Concepts</h2>
+      <p>A <strong>computer network</strong> is two or more devices connected so they can share
+      data and resources. A few core ideas every website team should know:</p>
+      <ul>
+        <li><strong>Node</strong> — any device on the network (a laptop, a server, a phone).</li>
+        <li><strong>IP Address</strong> — a numeric label (e.g. <code>192.168.1.10</code>) that
+        identifies a device on the network, similar to a postal address.</li>
+        <li><strong>Protocol</strong> — an agreed set of rules for communication, e.g.
+        <code>HTTP</code>, <code>TCP/IP</code>.</li>
+        <li><strong>LAN / WAN</strong> — a Local Area Network covers a small area (one campus
+        building); a Wide Area Network spans cities or countries (the Internet itself is the
+        largest WAN).</li>
+        <li><strong>Client–Server model</strong> — the client (browser) requests data; the
+        server stores and returns it. This is the model the entire Web is built on.</li>
+      </ul>
+
+      <div class="diagram">
+        <p class="diagram-label">Client–Server Communication</p>
+        <div class="diagram-row flow">
+          <div class="box">Client<span class="box-sub">Browser</span></div>
+          <div class="arrow">HTTP Request →</div>
+          <div class="box">Server<span class="box-sub">Web Server</span></div>
+        </div>
+        <div class="diagram-row flow">
+          <div class="box">Client<span class="box-sub">Browser</span></div>
+          <div class="arrow">← HTTP Response</div>
+          <div class="box">Server<span class="box-sub">Web Server</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. URL and its Structure -->
+    <section id="url" class="topic">
+      <h2>3. URL and its Structure</h2>
+      <p>A <strong>URL (Uniform Resource Locator)</strong> is the address typed into a browser to
+      reach a specific resource on the Web. It has several distinct parts:</p>
+
+      <div class="url-diagram">
+        <div class="url-string">
+          <span class="part scheme">https</span><span class="punct">://</span><span class="part sub">www</span><span class="punct">.</span><span class="part domain">institution</span><span class="punct">.</span><span class="part tld">edu</span><span class="part path">/admissions/apply.html</span><span class="part query">?year=2026</span>
+        </div>
+        <div class="url-legend">
+          <div><span class="swatch scheme"></span> Scheme / Protocol — <code>https</code></div>
+          <div><span class="swatch sub"></span> Subdomain — <code>www</code></div>
+          <div><span class="swatch domain"></span> Domain name — <code>institution</code></div>
+          <div><span class="swatch tld"></span> Top-level domain — <code>.edu</code></div>
+          <div><span class="swatch path"></span> Path — <code>/admissions/apply.html</code></div>
+          <div><span class="swatch query"></span> Query string — <code>?year=2026</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Domain Name -->
+    <section id="domain" class="topic">
+      <h2>4. Domain Name</h2>
+      <p>A <strong>domain name</strong> is the human-readable name that stands in for a server's
+      IP address (e.g. <code>institution.edu</code> instead of <code>203.0.113.42</code>). The
+      <strong>Domain Name System (DNS)</strong> is the internet's phone book — it translates the
+      domain name a person types into the numeric IP address a computer needs.</p>
+
+      <div class="diagram">
+        <p class="diagram-label">DNS Lookup</p>
+        <div class="diagram-row flow">
+          <div class="box">Browser<span class="box-sub">"institution.edu"</span></div>
+          <div class="arrow">→</div>
+          <div class="box">DNS Server<span class="box-sub">looks up the name</span></div>
+          <div class="arrow">→</div>
+          <div class="box">IP Address<span class="box-sub">203.0.113.42</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Web Browsers and Web Servers -->
+    <section id="browser-server" class="topic">
+      <h2>5. Web Browsers and Web Servers</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Web Browser</h3>
+          <p>Software installed on the user's device (Chrome, Firefox, Edge) that sends
+          requests for webpages and renders the HTML, CSS and JavaScript it receives into
+          the page the visitor sees and interacts with.</p>
+        </div>
+        <div class="card">
+          <h3>Web Server</h3>
+          <p>Software (and often the machine running it) that stores website files and
+          listens for incoming requests, sending back the correct page, image, or data —
+          e.g. Apache, Nginx, or a Node.js server.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Working Principle of a Website -->
+    <section id="working" class="topic">
+      <h2>6. Working Principle of a Website</h2>
+      <p>Putting the pieces above together, here is what happens when a visitor opens the
+      institution's homepage:</p>
+      <ol class="steps">
+        <li>The visitor types <code>www.institution.edu</code> into the browser.</li>
+        <li>The browser asks a DNS server to resolve that domain to an IP address.</li>
+        <li>The browser sends an HTTP request to the web server at that IP address.</li>
+        <li>The web server locates the requested file (e.g. <code>index.html</code>) and
+        sends it back in an HTTP response.</li>
+        <li>The browser parses the HTML/CSS/JavaScript and renders the finished page on
+        screen.</li>
+      </ol>
+    </section>
+
+    <!-- 7. Difference between Client-side and Server-side Scripting -->
+    <section id="client-server-script" class="topic">
+      <h2>7. Client-side vs. Server-side Scripting</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Where the code runs, and what it's good for</caption>
+          <thead>
+            <tr>
+              <th scope="col">Aspect</th>
+              <th scope="col">Client-side Scripting</th>
+              <th scope="col">Server-side Scripting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Runs on</td><td>The visitor's browser</td><td>The web server</td></tr>
+            <tr><td>Common languages</td><td>JavaScript</td><td>PHP, Node.js, Python, Java</td></tr>
+            <tr><td>Typical use</td><td>Form validation, animations, interactivity</td><td>Database access, authentication, generating pages dynamically</td></tr>
+            <tr><td>Visibility</td><td>Source is visible to the user (View Source)</td><td>Source stays private on the server</td></tr>
+            <tr><td>Dependency</td><td>Needs the browser to execute</td><td>Runs regardless of the visitor's device</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <h2>Conclusion</h2>
+    <p>The Internet is the underlying network, and the Web is the linked-document service that
+    runs on it. A URL identifies a resource by combining a protocol, domain and path, and DNS
+    quietly translates that domain into an IP address for every request. Browsers and servers
+    talk to each other using the client–server model — the browser asks, the server answers —
+    and the page a visitor finally sees is the result of client-side code (JavaScript, for
+    interactivity) working alongside server-side code (for data and logic). Understanding this
+    chain is the first step before designing the institution's own site.</p>
+  </footer>
+
+</body>
+</html>

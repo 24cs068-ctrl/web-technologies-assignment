@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grade Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="calc-wrap">
+    <h1>Grade Calculator</h1>
+    <p class="subtitle">Enter marks (out of 100) for five subjects to get the total, average, grade and pass/fail status.</p>
+
+    <form id="gradeForm">
+      <div class="subject-grid">
+        <div class="field">
+          <label for="s1">Subject 1</label>
+          <input type="number" id="s1" min="0" max="100" value="0" required>
+        </div>
+        <div class="field">
+          <label for="s2">Subject 2</label>
+          <input type="number" id="s2" min="0" max="100" value="0" required>
+        </div>
+        <div class="field">
+          <label for="s3">Subject 3</label>
+          <input type="number" id="s3" min="0" max="100" value="0" required>
+        </div>
+        <div class="field">
+          <label for="s4">Subject 4</label>
+          <input type="number" id="s4" min="0" max="100" value="0" required>
+        </div>
+        <div class="field">
+          <label for="s5">Subject 5</label>
+          <input type="number" id="s5" min="0" max="100" value="0" required>
+        </div>
+      </div>
+
+      <button type="submit">Calculate Result</button>
+    </form>
+
+    <section id="result" class="result-panel hidden">
+      <div class="result-row">
+        <span>Total</span>
+        <strong id="rTotal">0</strong>
+      </div>
+      <div class="result-row">
+        <span>Average</span>
+        <strong id="rAverage">0%</strong>
+      </div>
+      <div class="result-row">
+        <span>Grade</span>
+        <strong id="rGrade">-</strong>
+      </div>
+      <div class="result-row">
+        <span>Status</span>
+        <strong id="rStatus" class="status">-</strong>
+      </div>
+    </section>
+
+    <p id="errorMsg" class="error-msg hidden">Please enter a valid mark between 0 and 100 for every subject.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

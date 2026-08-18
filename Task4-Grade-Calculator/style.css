@@ -1,0 +1,85 @@
+/* Task 4 — Grade Calculator styling */
+
+:root{
+  --ink:#20242b;
+  --paper:#f2f4f8;
+  --panel:#ffffff;
+  --accent:#3556d1;
+  --line:#dbe0ea;
+  --pass:#1f8a4c;
+  --fail:#c8402f;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--paper);
+  font-family:'Segoe UI', system-ui, sans-serif;
+  color:var(--ink);
+  padding:30px 16px;
+}
+
+.calc-wrap{
+  width:100%;
+  max-width:440px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:32px 30px;
+  box-shadow:0 20px 40px -28px rgba(20,25,40,0.35);
+}
+
+h1{margin:0 0 6px;font-size:24px;}
+.subtitle{margin:0 0 24px;font-size:14px;color:#5a6072;}
+
+.subject-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:22px;
+}
+.field label{
+  display:block;font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.04em;
+  color:#5a6072;margin-bottom:6px;
+}
+.field input{
+  width:100%;padding:10px 12px;
+  border:1.5px solid var(--line);border-radius:7px;
+  font-size:15px;font-family:inherit;
+}
+.field input:focus{outline:none;border-color:var(--accent);}
+
+button[type="submit"]{
+  width:100%;padding:13px;
+  background:var(--accent);color:#fff;
+  border:none;border-radius:8px;
+  font-size:15px;font-weight:700;cursor:pointer;
+}
+button[type="submit"]:hover{background:#2a44ac;}
+
+.result-panel{
+  margin-top:24px;padding:18px 20px;
+  background:var(--paper);border-radius:10px;
+  border:1px solid var(--line);
+}
+.result-row{
+  display:flex;justify-content:space-between;
+  padding:8px 0;font-size:14px;
+  border-bottom:1px dashed var(--line);
+}
+.result-row:last-child{border-bottom:none;}
+.status.pass{color:var(--pass);}
+.status.fail{color:var(--fail);}
+
+.error-msg{
+  margin-top:18px;padding:12px 14px;
+  background:#fbe9e7;color:var(--fail);
+  border:1px solid #f0b6ab;border-radius:8px;
+  font-size:13px;
+}
+.hidden{display:none;}

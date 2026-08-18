@@ -1,0 +1,82 @@
+/* Task 5 — Supermarket Billing System styling */
+
+:root{
+  --ink:#20242b;
+  --paper:#f2f4f8;
+  --panel:#ffffff;
+  --accent:#e08a2c;
+  --line:#dbe0ea;
+  --good:#1f8a4c;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--paper);
+  font-family:'Segoe UI', system-ui, sans-serif;
+  color:var(--ink);
+  padding:30px 16px;
+}
+
+.bill-wrap{
+  width:100%;
+  max-width:480px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:32px 30px;
+  box-shadow:0 20px 40px -28px rgba(20,25,40,0.35);
+}
+
+h1{margin:0 0 6px;font-size:24px;}
+.subtitle{margin:0 0 22px;font-size:14px;color:#5a6072;}
+
+.product-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+.product-table th{
+  text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;
+  color:#5a6072;padding-bottom:8px;border-bottom:1px solid var(--line);
+}
+.product-table td{padding:8px 6px 8px 0;}
+.product-table td:first-child{font-size:14px;font-weight:600;width:30%;}
+.product-table input{
+  width:100%;padding:9px 10px;
+  border:1.5px solid var(--line);border-radius:7px;
+  font-size:14px;font-family:inherit;
+}
+.product-table input:focus{outline:none;border-color:var(--accent);}
+
+button[type="submit"]{
+  width:100%;padding:13px;
+  background:var(--accent);color:#fff;
+  border:none;border-radius:8px;
+  font-size:15px;font-weight:700;cursor:pointer;
+}
+button[type="submit"]:hover{background:#c47420;}
+
+.bill-panel{
+  margin-top:24px;padding:20px 22px;
+  background:var(--paper);border-radius:10px;
+  border:1px solid var(--line);
+}
+.bill-panel h2{margin:0 0 14px;font-size:16px;}
+.bill-row{
+  display:flex;justify-content:space-between;
+  padding:8px 0;font-size:14px;
+  border-bottom:1px dashed var(--line);
+}
+.bill-row.total{
+  border-bottom:none;border-top:1.5px solid var(--ink);
+  margin-top:4px;padding-top:12px;
+  font-size:16px;font-weight:700;
+}
+.discount-note{
+  margin:14px 0 0;padding:10px 12px;
+  background:#e6f5ec;color:var(--good);
+  border:1px solid #a9dfbf;border-radius:8px;
+  font-size:13px;
+}
+.hidden{display:none;}

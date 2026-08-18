@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supermarket Billing System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="bill-wrap">
+    <h1>Supermarket Bill Generator</h1>
+    <p class="subtitle">Enter quantity and unit price for up to three products. A 10% discount applies automatically once the bill crosses ₹2000.</p>
+
+    <form id="billForm">
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit Price (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="name1">Product 1</label></td>
+            <td><input type="number" id="qty1" min="0" value="0" required></td>
+            <td><input type="number" id="price1" min="0" step="0.01" value="0" required></td>
+          </tr>
+          <tr>
+            <td><label for="name2">Product 2</label></td>
+            <td><input type="number" id="qty2" min="0" value="0" required></td>
+            <td><input type="number" id="price2" min="0" step="0.01" value="0" required></td>
+          </tr>
+          <tr>
+            <td><label for="name3">Product 3</label></td>
+            <td><input type="number" id="qty3" min="0" value="0" required></td>
+            <td><input type="number" id="price3" min="0" step="0.01" value="0" required></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="submit">Generate Bill</button>
+    </form>
+
+    <section id="bill" class="bill-panel hidden">
+      <h2>Bill Summary</h2>
+      <div class="bill-row"><span>Subtotal</span><strong id="bSubtotal">₹0.00</strong></div>
+      <div class="bill-row" id="discountRow"><span>Discount (10%)</span><strong id="bDiscount">₹0.00</strong></div>
+      <div class="bill-row total"><span>Payable Amount</span><strong id="bTotal">₹0.00</strong></div>
+      <p id="discountNote" class="discount-note hidden">🎉 Discount applied — your order crossed ₹2000!</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Admission Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Online Admission Form — 2026 Batch</h1>
+    <p>Fill in your details below. Fields marked <span class="req">*</span> are required.</p>
+  </header>
+
+  <main class="page-wrap">
+
+    <!-- Short intro video: a media element (video) demonstrating the campus -->
+    <section class="intro-media">
+      <h2>Take a quick campus tour before you apply</h2>
+      <!-- controls attribute gives the visitor play/pause/volume controls -->
+      <video controls poster="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIj4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMxYzI0MzAiLz4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9InVybCgjZykiLz4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJmNmZlZCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFjMjQzMCIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8Y2lyY2xlIGN4PSI0MDAiIGN5PSIxOTAiIHI9IjQ2IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz4KPHBvbHlnb24gcG9pbnRzPSIzODgsMTY4IDM4OCwyMTIgNDI0LDE5MCIgZmlsbD0iIzFjMjQzMCIvPgo8dGV4dCB4PSI0MDAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DYW1wdXMgVG91ciDigJQgdmlkZW8gcGxhY2Vob2xkZXI8L3RleHQ+Cjwvc3ZnPg==" width="100%">
+        Your browser does not support the video tag. A real campus-tour.mp4 file would be linked here.
+      </video>
+
+      <!-- Audio media element: a short welcome message from the admissions office -->
+      <p class="audio-label">Listen: a short welcome message from the Admissions Office</p>
+      <audio controls>
+        <source src="welcome-message.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </section>
+
+    <form class="admission-form" id="admissionForm">
+
+      <!-- ============ Personal Details ============ -->
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <div class="field">
+          <label for="fullName">Full Name <span class="req">*</span></label>
+          <!-- text input -->
+          <input type="text" id="fullName" name="fullName" placeholder="As per school records" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="dob">Date of Birth <span class="req">*</span></label>
+            <!-- date input type -->
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div class="field">
+            <label for="age">Age</label>
+            <!-- number input type, restricted with min/max -->
+            <input type="number" id="age" name="age" min="14" max="25" placeholder="Years">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Gender <span class="req">*</span></label>
+          <!-- radio button group -->
+          <div class="radio-row">
+            <label class="inline"><input type="radio" name="gender" value="female" required> Female</label>
+            <label class="inline"><input type="radio" name="gender" value="male"> Male</label>
+            <label class="inline"><input type="radio" name="gender" value="other"> Other</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="photo">Passport Size Photo</label>
+          <!-- file input, restricted to images -->
+          <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+
+        <!-- Sample profile image already on the page — a media element (image) -->
+        <div class="field">
+          <label>Sample Format</label>
+          <img class="sample-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjQwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyNDAiIGZpbGw9IiNkYmU0ZjUiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iOTAiIHI9IjQyIiBmaWxsPSIjOGZhOGQ2Ii8+CjxwYXRoIGQ9Ik0zMCAyMzAgUTEwMCAxNTAgMTcwIDIzMCBaIiBmaWxsPSIjOGZhOGQ2Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMjAiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQ4NTg3YSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U0FNUExFIFBIT1RPPC90ZXh0Pgo8L3N2Zz4=" alt="Example of an accepted passport-size photo, plain background, front-facing">
+        </div>
+      </fieldset>
+
+      <!-- ============ Contact Details ============ -->
+      <fieldset>
+        <legend>Contact Details</legend>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <!-- email input, browser validates the format -->
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <!-- tel input -->
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="address">Postal Address</label>
+          <textarea id="address" name="address" rows="3" placeholder="House no, street, city, state, PIN"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="website">Portfolio / LinkedIn (optional)</label>
+          <!-- url input -->
+          <input type="url" id="website" name="website" placeholder="https://">
+        </div>
+      </fieldset>
+
+      <!-- ============ Course Details ============ -->
+      <fieldset>
+        <legend>Course Details</legend>
+
+        <div class="field">
+          <label for="course">Course Applying For <span class="req">*</span></label>
+          <!-- select dropdown -->
+          <select id="course" name="course" required>
+            <option value="" disabled selected>Choose a course</option>
+            <option value="cse">B.Tech — Computer Science</option>
+            <option value="ece">B.Tech — Electronics &amp; Communication</option>
+            <option value="mech">B.Tech — Mechanical</option>
+            <option value="mba">MBA</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Preferred Shift</label>
+          <div class="radio-row">
+            <label class="inline"><input type="radio" name="shift" value="morning" checked> Morning</label>
+            <label class="inline"><input type="radio" name="shift" value="evening"> Evening</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Hostel Required?</label>
+          <!-- checkbox: single boolean choice -->
+          <label class="inline"><input type="checkbox" id="hostel" name="hostel"> Yes, I need hostel accommodation</label>
+        </div>
+
+        <div class="field">
+          <label for="marks">Percentage in Qualifying Exam <span class="req">*</span></label>
+          <!-- range input paired with a live number readout -->
+          <input type="range" id="marks" name="marks" min="0" max="100" value="75"
+                 oninput="marksValue.value = marks.value + '%'">
+          <output id="marksValue" for="marks">75%</output>
+        </div>
+      </fieldset>
+
+      <!-- ============ Declaration ============ -->
+      <fieldset>
+        <legend>Declaration</legend>
+        <label class="inline">
+          <input type="checkbox" id="declare" name="declare" required>
+          I confirm the details provided above are true to the best of my knowledge. <span class="req">*</span>
+        </label>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Application</button>
+        <button type="reset" class="btn-ghost">Clear Form</button>
+      </div>
+
+      <p id="successMsg" class="success-msg">Application submitted — thank you! (Demo only, no data is sent anywhere.)</p>
+    </form>
+  </main>
+
+  <footer class="page-footer">
+    <p>© 2026 Admissions Office. Demo form for coursework — not a live application system.</p>
+  </footer>
+
+  <script>
+    // Prevent an actual page reload on submit — this is a static demo form
+    document.getElementById('admissionForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('successMsg').classList.add('show');
+      this.reset();
+      marksValue.value = '75%'; // reset the range readout back to its default
+    });
+  </script>
+
+</body>
+</html>

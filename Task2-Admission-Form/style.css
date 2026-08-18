@@ -1,0 +1,195 @@
+/* ===========================================================
+   Task 2 — Responsive Student Admission Form
+   Demonstrates: CSS3 selectors, the box model, and a responsive
+   layout that reflows from a 2-column grid to a single column.
+   =========================================================== */
+
+/* ---- CSS3 Selector: universal selector, resets the box model ---- */
+*{
+  box-sizing:border-box; /* padding/border counted INSIDE width — core box-model choice */
+  margin:0;
+}
+
+:root{
+  --ink:#1c2430;
+  --paper:#f4f6fb;
+  --panel:#ffffff;
+  --accent:#2f6fed;
+  --accent-dark:#1a4fc4;
+  --line:#d7dce6;
+  --danger:#e15050;
+}
+
+/* ---- Type selector ---- */
+body{
+  font-family:'Segoe UI', system-ui, sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  padding:32px 20px;
+  text-align:center;
+}
+.site-header h1{font-size:clamp(20px,4vw,30px);margin-bottom:6px;}
+
+/* ---- Attribute selector: styles only <span> elements with class "req" ---- */
+span.req{color:#ff8080;font-weight:700;}
+
+.page-wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+
+/* ---- Descendant selector ---- */
+.intro-media h2{font-size:17px;margin-bottom:10px;}
+.intro-media video, .intro-media audio{
+  width:100%;
+  border-radius:10px;
+  outline:1px solid var(--line);
+}
+.intro-media audio{width:100%;margin-top:4px;}
+.audio-label{font-size:14px;color:#4a5468;margin:18px 0 6px;}
+.intro-media{margin-bottom:30px;}
+
+/* ---- BOX MODEL DEMONSTRATION ----
+   Each .field wraps a label+input pair. The visible box below is
+   built from: content (input) -> padding -> border -> margin.
+*/
+form.admission-form{
+  background:var(--panel);
+  border-radius:12px;
+  border:1px solid var(--line);
+  padding:8px;
+}
+
+fieldset{
+  border:1px solid var(--line);   /* border edge of the box */
+  border-radius:10px;
+  padding:22px 24px;              /* padding edge of the box */
+  margin:18px;                    /* margin edge of the box  */
+}
+legend{
+  padding:0 10px;                 /* padding around legend text */
+  font-weight:700;
+  color:var(--accent-dark);
+  font-size:15px;
+}
+
+.field{margin-bottom:18px;}       /* margin between stacked fields */
+.field:last-child{margin-bottom:0;}
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:6px;
+  color:#3a4358;
+}
+
+/* text-like inputs share one box-model treatment via a grouped selector */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea{
+  width:100%;
+  padding:11px 13px;      /* content sits inside this padding   */
+  border:1.5px solid var(--line); /* border wraps the padding    */
+  border-radius:7px;
+  font-size:14px;
+  font-family:inherit;
+  background:#fbfcfe;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+
+/* ---- Pseudo-class selector: focus state ---- */
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(47,111,237,0.15);
+}
+
+/* ---- Pseudo-class selector: validity state ---- */
+input:required:invalid{border-color:var(--line);}
+input:not(:placeholder-shown):invalid{border-color:var(--danger);}
+
+.field-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.radio-row{display:flex;gap:18px;flex-wrap:wrap;}
+label.inline{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:400;
+  font-size:14px;
+  color:#3a4358;
+  cursor:pointer;
+}
+label.inline input{width:auto;}
+
+input[type="range"]{width:80%;vertical-align:middle;}
+output{font-weight:700;color:var(--accent-dark);margin-left:10px;}
+
+.sample-photo{
+  width:100px;
+  border:2px solid var(--line);
+  border-radius:6px;
+  padding:4px;               /* padding around the image inside its border */
+}
+
+.form-actions{
+  display:flex;
+  gap:14px;
+  padding:20px 24px 24px;
+  flex-wrap:wrap;
+}
+.btn-primary, .btn-ghost{
+  padding:13px 26px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  border:2px solid var(--accent);
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+.btn-ghost{background:transparent;color:var(--accent-dark);}
+.btn-ghost:hover{background:var(--accent);color:#fff;}
+
+.success-msg{
+  display:none;
+  margin:0 24px 22px;
+  padding:14px 18px;
+  background:#e5f6ea;
+  border:1px solid #7fd39a;
+  color:#1a6b34;
+  border-radius:8px;
+  font-size:14px;
+}
+.success-msg.show{display:block;}
+
+.page-footer{
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  color:#6b7386;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width:640px){
+  .field-row{grid-template-columns:1fr;}
+  fieldset{margin:12px;padding:18px 16px;}
+  .form-actions{flex-direction:column;}
+  .btn-primary, .btn-ghost{width:100%;}
+}
